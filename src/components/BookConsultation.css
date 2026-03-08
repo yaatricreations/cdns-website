@@ -1,0 +1,210 @@
+.consultation-bar {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  margin: 60px auto;
+  max-width: 1200px;
+  border-radius: 20px;
+  position: relative;
+  color: #0197b2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ✅ EXACT SAME GRADIENT BORDER AS FAQ SECTION */
+.consultation-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, #0197b2, #0ce28d, #0197b2);
+  background-size: 300% 300%;
+  animation: borderFlow 8s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.consultation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.consultation-left {
+  flex: 1;
+}
+
+.consultation-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #0197b2;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.consultation-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #0197b2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.consultation-right {
+  flex-shrink: 0;
+}
+
+/* ✅ CONSULTATION BUTTON - NO ZOOM, NO GLOW (HOVER OR STATIC) */
+.consultation-button {
+  background: linear-gradient(135deg, #0197b2, #0ce28d);
+  color: #ffffff;
+  border: none;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Minimal static shadow */
+}
+
+.consultation-button:hover {
+  background-position: 100% 50%;
+  animation-duration: 6s;
+  /* ✅ NO ZOOM, NO GLOW - ONLY gradient shift */
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* SAME static shadow */
+}
+
+
+/* ✅ ANIMATIONS */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============ RESPONSIVE - VERTICAL MOBILE STACK ============ */
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .consultation-container {
+    gap: 25px;
+    align-items: flex-start;
+  }
+  
+  .consultation-title {
+    font-size: 32px;
+  }
+  
+  .consultation-text {
+    font-size: 16px;
+  }
+  
+  .consultation-button {
+    padding: 12px 24px;
+  }
+}
+
+/* Mobile Large (481px - 768px) - VERTICAL STACK */
+@media (max-width: 768px) {
+  .consultation-bar {
+    padding: 25px 20px;
+    margin: 40px auto;
+  }
+  
+  .consultation-container {
+    flex-direction: column !important; /* ✅ VERTICAL ALIGN */
+    align-items: center !important;   /* ✅ CENTER ALL */
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .consultation-left {
+    flex: none;
+    width: 100%;
+  }
+  
+  .consultation-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .consultation-text {
+    font-size: 16px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .consultation-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .consultation-button {
+    padding: 14px 32px;
+    font-size: 16px;
+    min-width: 220px;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .consultation-bar {
+    padding: 20px 15px;
+    margin: 30px auto;
+    border-radius: 16px;
+  }
+  
+  .consultation-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .consultation-text {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .consultation-button {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Extra Small (max-width: 360px) */
+@media (max-width: 360px) {
+  .consultation-bar {
+    padding: 18px 12px;
+    margin: 25px auto;
+  }
+  
+  .consultation-title {
+    font-size: 22px;
+  }
+  
+  .consultation-text {
+    font-size: 14px;
+  }
+  
+  .consultation-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}

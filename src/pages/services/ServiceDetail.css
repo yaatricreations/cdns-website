@@ -1,0 +1,454 @@
+/* ============ SERVICE DETAIL ============ */
+
+/* Global */
+body {
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* LST Overview */
+.lst-overview {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  color: #0ce28c;
+}
+
+.lst-overview-image {
+  flex-shrink: 0;
+  width: 600px;
+  max-width: 100%;
+}
+.lst-overview-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(1, 151, 178, 0.2);
+  display: block;
+}
+.lst-overview-text {
+  flex: 1;
+}
+.lst-overview-text h2 {
+  color: #0197b2;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.lst-overview-text p {
+  color: #0197b2;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Shared Section Styles (Why + Who + FAQ) - CONSISTENT 60px TOP/BOTTOM SPACING */
+.why-lst,
+.who-lst,
+.faq-lst {
+  padding: 40px 30px;
+  max-width: 1200px;
+  margin: 60px auto; /* ✅ 60px top/bottom spacing between ALL sections */
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Animated gradient border (applies to all sections) */
+.why-lst::before,
+.who-lst::before,
+.faq-lst::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, #0197b2, #0ce28d, #0197b2);
+  background-size: 300% 300%;
+  animation: borderFlow 8s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* Section Titles */
+.why-lst h2,
+.who-lst h2,
+.faq-lst h2 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #0197b2;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Subtitles (Why only) */
+.why-sub {
+  text-align: center;
+  font-size: 16px;
+  color: #0197b2;
+  margin-bottom: 40px;
+}
+
+/* Grid Layouts */
+.why-grid,
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Shared Card Styles (Why + Who) */
+.why-card,
+.who-card {
+  background: linear-gradient(
+    270deg,
+    rgba(1, 151, 178, 1),
+    rgba(12, 226, 141, 1)
+  );
+  color: #ffffff;
+  padding: 32px 24px;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  transition: all 0.5s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+}
+
+.why-card h4,
+.who-card h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.why-card p,
+.who-card p {
+  color: #f0fdf9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Hover effect (shared) */
+.why-card:hover,
+.who-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(12,226,141,0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(12, 226, 141, 1),
+    rgba(1, 151, 178, 1)
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 6s ease infinite;
+}
+
+/* FAQ Container Layout - DESKTOP: Split view (Q/A left, Image right, SAME HEIGHT) */
+.faq-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Left side (Q/A) */
+.faq-questions {
+  flex: 1;
+}
+
+/* Right side (Image) - spans EXACTLY same height/width as left Q/A */
+.faq-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* ✅ align to top with Q/A */
+  min-height: 400px; /* ✅ ensures consistent height matching Q/A content */
+}
+.faq-image img {
+  max-width: 100%;
+  max-height: 400px; /* ✅ caps height to match Q/A section */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* ✅ maintains aspect ratio, fills space */
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* FAQ Card */
+.faq-card {
+  background: linear-gradient(
+    135deg,
+    rgba(1, 151, 178, 1),
+    rgba(12, 226, 141, 1)
+  );
+  color: #ffffff;
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: left;
+  border: none;
+  transition: all 0.5s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  margin-bottom: 20px;
+}
+
+.faq-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(12,226,141,0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(12, 226, 141, 0.85),
+    rgba(1, 151, 178, 0.85)
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 6s ease infinite;
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: none;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.faq-question:hover {
+  color: #f0fdf9;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0;
+  color: #f0fdf9;
+  font-size: 14px;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.faq-card.open .faq-answer {
+  max-height: 200px;
+  padding: 10px 0;
+}
+
+/* Gradient animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============ RESPONSIVE BREAKPOINTS ============ */
+
+/* Tablet / Half-Screen (769px - 1024px) - SPLIT VIEW maintained */
+@media (max-width: 1024px) {
+  .lst-overview,
+  .why-lst,
+  .who-lst,
+  .faq-lst {
+    padding: 25px 20px;
+    margin: 60px auto; /* ✅ consistent 60px spacing */
+    border-radius: 18px;
+  }
+
+  .lst-overview {
+    gap: 30px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .lst-overview-image {
+    width: 50%;
+  }
+
+  .lst-overview-text h2,
+  .why-lst h2,
+  .who-lst h2,
+  .faq-lst h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  /* ✅ FAQ: Split view maintained - image matches Q/A height */
+  .faq-container {
+    gap: 25px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .faq-image {
+    flex: 1;
+    min-height: 350px;
+  }
+
+  .faq-image img {
+    max-height: 350px;
+    object-fit: contain;
+  }
+}
+
+/* Mobile Large (481px - 768px) - IMAGE FIRST */
+@media (max-width: 768px) {
+  .lst-overview {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .lst-overview-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .lst-overview-image img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .lst-overview-text h2,
+  .why-lst h2,
+  .who-lst h2,
+  .faq-lst h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  .why-grid,
+  .who-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .why-card,
+  .who-card {
+    padding: 25px 15px;
+  }
+
+  /* ✅ MOBILE: IMAGE FIRST, then Q/A stacked */
+  .faq-container {
+    flex-direction: column-reverse; /* ✅ IMAGE FIRST */
+    gap: 20px;
+  }
+
+  .faq-image {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    order: -1; /* ✅ ensures image appears first */
+  }
+
+  .faq-image img {
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .lst-overview,
+  .why-lst,
+  .who-lst,
+  .faq-lst {
+    padding: 20px 15px;
+    margin: 40px auto; /* ✅ reduced but consistent spacing */
+    border-radius: 16px;
+  }
+
+  .lst-overview-text h2,
+  .why-lst h2,
+  .who-lst h2,
+  .faq-lst h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .why-grid,
+  .who-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lst-overview-image img,
+  .faq-image img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .why-card,
+  .who-card {
+    padding: 22px 15px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .faq-answer {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* ✅ Mobile spacing maintained */
+  .faq-container {
+    gap: 18px;
+  }
+}
+
+/* Extra Small Screens (max-width: 360px) */
+@media (max-width: 360px) {
+  .lst-overview,
+  .why-lst,
+  .who-lst,
+  .faq-lst {
+    padding: 18px 12px;
+    margin: 30px auto;
+  }
+
+  .lst-overview-text h2,
+  .why-lst h2,
+  .who-lst h2,
+  .faq-lst h2 {
+    font-size: 24px;
+  }
+
+  .faq-image img {
+    height: 160px;
+  }
+}

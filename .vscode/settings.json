@@ -1,0 +1,17 @@
+{
+    "prettier.semi": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "html.autoClosingTags": true,
+  "editor.formatOnSave": true,
+  "editor.renameOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

@@ -1,0 +1,128 @@
+.service-hero {
+  background: var(--brand-blue-light);
+  padding: 30px 20px;  /* ✅ Updated: 30px 20px to match consultation-bar */
+  text-align: center;
+  max-width: 1200px;   /* ✅ Added for consistency */
+  margin: 60px auto;   /* ✅ Added consistent margin */
+}
+
+.service-hero h1 {
+  color: #0197b2;
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 60px;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.service-hero p {
+  max-width: 700px;
+  margin: 15px auto 0;
+  font-size: 16px;
+  color: rgb(10, 150, 179);
+  text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* MAIN CONTENT */
+.service-content {
+  max-width: 1200px;   /* ✅ Updated to match pattern */
+  margin: 60px auto;   /* ✅ Consistent margin */
+  padding: 30px 20px;  /* ✅ Updated: 30px 20px to match consultation-bar */
+  line-height: 1.7;
+}
+
+/* OTHER SERVICES */
+.other-services {
+  padding: 30px 20px;
+  background: #f9fcfc;
+  text-align: center;
+  max-width: 1200px;
+  margin: 60px auto; 
+  border-radius: 20px;
+}
+
+.other-services h2 {
+  color: #0197b2;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ INCORPORATED GRADIENT STYLES FROM WHY/WHO/FAQ CARDS */
+.other-card {
+  /* ✅ SAME GRADIENT as why-card/who-card */
+  background: linear-gradient(
+    270deg,
+    rgba(1, 151, 178, 1),   /* blue */
+    rgba(12, 226, 141, 1)   /* green */
+  );
+  background-size: 200% 200%;           /* ✅ Animation support */
+  animation: gradientFlow 10s ease infinite; /* ✅ Flowing gradient */
+  
+  padding: 32px 24px;                   /* ✅ Matches why/who cards */
+  border-radius: 20px;                  /* ✅ Matches why/who cards */
+  cursor: pointer;
+  transition: all 0.5s ease;            /* ✅ Smooth hover transition */
+  font-weight: 600;                     /* ✅ Matches card titles */
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25); /* ✅ Matches card text */
+  border: none;
+  text-align: center;
+}
+
+/* ✅ ENHANCED HOVER - MATCHES WHY/WHO/FAQ */
+.other-card:hover {
+  transform: translateY(-8px) scale(1.02);  /* ✅ Lift + scale effect */
+  box-shadow: 0 12px 28px rgba(12,226,141,0.25); /* ✅ Green glow */
+  background: linear-gradient(
+    135deg,
+    rgba(12, 226, 141, 1),   /* ✅ Green dominant */
+    rgba(1, 151, 178, 1)     /* ✅ Blue secondary */
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 6s ease infinite; /* ✅ Faster hover animation */
+}
+
+/* ✅ REQUIRED ANIMATION KEYFRAME (from main sections) */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CTA SPACING */
+.book-consultation {
+  margin: 60px auto;   /* ✅ Updated for consistency */
+  max-width: 1200px;   /* ✅ Added for consistency */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .service-hero {
+    margin: 60px 20px;  /* ✅ 20px side margins */
+    padding: 30px 20px; /* ✅ Perfect match */
+  }
+  
+  .service-content {
+    margin: 60px 20px;  /* ✅ 20px side margins */
+    padding: 30px 20px; /* ✅ Perfect match */
+  }
+  
+  .other-services {
+    margin: 60px 20px;  /* ✅ 20px side margins */
+    padding: 30px 20px; /* ✅ Perfect match */
+  }
+  
+  .other-card {
+    padding: 30px 20px; /* ✅ Maintain 20px consistency */
+  }
+  
+  .book-consultation {
+    margin: 40px 20px;  /* ✅ Mobile adjusted */
+  }
+}

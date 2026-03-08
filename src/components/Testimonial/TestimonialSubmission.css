@@ -1,0 +1,269 @@
+/* TestimonialSubmission.css - FORM VISIBLE + PERFECT ALIGNMENT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #0197b2;
+  overflow-x: hidden;
+}
+
+/* ✅ SIMPLIFIED MAIN CONTAINER */
+.testimonial-submission-hero {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ✅ 50/50 DESKTOP GRID */
+.testimonial-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ✅ LEFT TEXT - TOP LEFT (Desktop), TOP CENTER (Mobile) */
+.testimonial-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-right: 2rem;
+  color: #0197b2;
+}
+
+.testimonial-hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 20rem;
+  color: #0197b2 !important;
+  
+}
+
+.testimonial-hero-content p {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  color: #0197b2 !important;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ✅ FORM SECTION - VISIBLE WITH GRADIENT BORDER */
+.testimonial-form-section {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(1,151,178,0.15);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.testimonial-form-section::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #0197b2, #0ce28d);
+  background-size: 300% 300%;
+  animation: borderFlow 10s ease infinite;
+  border-radius: 26px;
+  z-index: -1;
+}
+
+/* FORM LAYOUT */
+.testimonial-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.form-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: #0197b2;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #0197b2;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1.125rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: #fafbfc;
+  color: #0197b2;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0197b2;
+  box-shadow: 0 0 0 4px rgba(1,151,178,0.1);
+  background: #ffffff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+  border-color: #f56565;
+  background: #fdf2f2;
+}
+
+.error-message {
+  color: #f56565;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.form-group input[type="file"] {
+  padding: 1rem;
+  border: 2px dashed #0197b2;
+  background: rgba(1,151,178,0.05);
+  cursor: pointer;
+}
+
+.form-group small {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #0197b2, #0ce28d);
+  color: white;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+  box-shadow: 0 12px 35px rgba(1,151,178,0.4);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(1,151,178,0.5);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-status {
+  padding: 1.25rem;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.submit-status.success {
+  background: rgba(12,226,141,0.15);
+  color: #0ce28d;
+  border: 2px solid #0ce28d;
+}
+
+.submit-status.error {
+  background: rgba(239,68,68,0.1);
+  color: #dc2626;
+  border: 2px solid #ef4444;
+}
+
+@keyframes borderFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ✅ TABLET - START LIKE DESKTOP FORM */
+@media (max-width: 1024px) {
+  .testimonial-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;           /* ✅ Extra gap for form positioning */
+    
+  }
+  
+  .testimonial-submission-hero {
+    padding-top: 0rem;     /* ✅ 3rem TOP like desktop */
+  }
+  
+  .testimonial-hero-content {
+    padding-right: 0;
+    text-align: center;
+    margin-top: 0 !important;
+  }
+  
+  .testimonial-form-section {
+    margin-top: 0;         /* ✅ Form starts at correct height */
+  }
+}
+
+/* ✅ MOBILE - START LIKE DESKTOP FORM */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .testimonial-submission-hero {
+    padding: 3rem 1rem 2rem 1rem;  /* ✅ 3rem TOP like desktop */
+  }
+  
+  .testimonial-container {
+    margin-top: 5rem !important;   /* ✅ Extra space for form start */
+    padding: 0 1rem 3rem 1rem;     /* ✅ Form padding matches desktop */
+    gap: 2.5rem;
+  }
+  
+  .testimonial-hero-content h1,
+  .testimonial-hero-content p {
+    margin-top: 0 !important;
+  }
+}

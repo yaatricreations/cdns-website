@@ -1,0 +1,161 @@
+/* ---------------- FIXED NAVBAR - SINGLE BACKGROUND ---------------- */
+.navbar.cdns-nav {
+  background-color: #112b3cbb !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+  padding: 0.1rem 0;  /* ✅ Thin consistent height */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ SINGLE CONTAINER - PERFECT WIDTH */
+.navbar.cdns-nav .container-fluid,
+.navbar.cdns-nav .container {
+  padding: 0 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 0;
+}
+
+/* Navbar links */
+.navbar .nav-link {
+  font-size: 1rem;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  margin: 0 12px;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: color 0.25s ease;
+  line-height: 1.4;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
+.navbar .nav-link:hover {
+  color: #0ce28d !important;
+}
+
+/* ✅ HAMBURGER - CLEAN */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.5rem !important;
+  height: auto !important;
+}
+
+/* ✅ SINGLE MOBILE BACKGROUND - NO DOUBLE LAYER */
+@media (max-width: 991px) {
+  .navbar.cdns-nav {
+    padding: 0.1rem 0;  /* ✅ Same thin padding */
+  }
+  
+  /* ✅ ONLY ONE BACKGROUND - navbar-nav only */
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: rgba(11, 31, 45, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 1rem !important;
+    margin-top: 0.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .navbar .nav-link {
+    margin: 0.25rem 0 !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+    font-weight: 400;
+    justify-content: flex-start !important;
+  }
+
+  .nav-logout-btn {
+    margin: 0.5rem 0 0 0 !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+    justify-content: center !important;
+  }
+
+  /* ✅ NO EXTRA COLLAPSE BACKGROUND */
+  .navbar-collapse {
+    background: transparent !important;  /* ✅ NO DOUBLE BG */
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;  /* ✅ Let navbar-nav handle padding */
+    box-shadow: none !important;
+  }
+}
+
+/* ✅ DROPDOWN - SINGLE LAYER */
+.dropdown-menu {
+  background-color: rgba(11, 31, 45, 0.95) !important;  /* ✅ Same as mobile */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-top: 8px;
+}
+
+.dropdown-menu .dropdown-item {
+  font-size: 0.9rem;
+  color: #ffffff !important;
+  padding: 12px 18px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  transition: color 0.25s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #0ce28d !important;
+  background: transparent !important;
+}
+
+/* Logout button */
+.nav-logout-btn {
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 16px;
+  padding: 0.625rem 1.5rem !important;
+  border-radius: 28px;
+  transition: all 0.25s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.4;
+  height: auto !important;
+}
+
+/* ✅ BODY SPACING - THIN NAVBAR */
+body {
+  padding-top: 70px;  /* ✅ Adjusted for thin navbar */
+}
+
+@media (max-width: 991px) {
+  body {
+    padding-top: 75px;
+  }
+}

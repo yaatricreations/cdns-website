@@ -1,0 +1,305 @@
+/* HeroSection.css - PERFECT RESPONSIVE + PROPER BUTTON LAYOUT */
+
+.hero-overlay {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Overlay - EXACT consultation-bar gradient style */
+.hero-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(1, 151, 178, 0.35),
+    rgba(0, 0, 0, 0.65),
+    rgba(12, 226, 141, 0.25)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+ .hero-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+/* DESKTOP - 1200px+ (Your original large styles) */
+@media (min-width: 1200px) {
+  .hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 20rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.3);
+    text-align: left;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    max-width: 28rem;
+    margin: 0 0 3.5rem 1rem;
+    text-align: left;
+  }
+
+  .hero-btns {
+   justify-content: flex-start;
+   margin-left: 1rem;
+  }
+}
+
+/* TABLET/HALF SCREEN - 769px-1199px (SIDE-BY-SIDE BUTTONS) */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .hero-overlay {
+    justify-content: flex-start;
+    padding-left: 4vw;
+  }
+  
+  .hero-content {
+    max-width: 80%;
+    padding-left: 3rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 44px;
+    font-weight: 650;
+    margin-top: 20rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+    max-width: 26rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+  
+  /* ✅ BUTTONS SIDE-BY-SIDE ON HALF SCREEN */
+  .hero-btns {
+     justify-content: flex-start;
+    margin-left: 1rem;
+  }
+}
+
+/* MOBILE LARGE - 481px-768px */
+@media (max-width: 768px) and (min-width: 481px) {
+  .hero-overlay {
+    min-height: 92vh;
+    justify-content: flex-start;
+    padding: 0 0 2rem 6vw;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    padding: 1.5rem 1.5rem 1rem;
+    max-width: 95vw;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 1.25rem 0;
+    margin-top: 20rem;
+    text-align: left;
+  }
+  
+  .hero-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  /* ✅ BUTTONS SIDE-BY-SIDE */
+  .hero-btns {
+   display: flex;       /* ✅ ADD THIS */
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+/* MOBILE SMALL - ≤480px (ONLY HERE BUTTONS STACK) */
+@media (max-width: 480px) {
+  .hero-overlay {
+    min-height: 88vh;
+    padding-left: 8vw;
+    padding-bottom: 2.5rem;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 28px;
+    font-weight: 550;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  /* ✅ STACKED BUTTONS WITH 60px (3.75rem) OPTIMUM SPACE */
+  .hero-btns {
+     display: flex !important;     /* ✅ FORCE FLEX */
+    flex-direction: column !important;
+    gap: 2rem !important;         /* ✅ REDUCED from 3.75rem (too much) */
+    width: 100%;
+    align-items: stretch;  
+  }
+}
+
+
+/* ✅ HERO BUTTONS - EXACT CONSULTATION BUTTON STYLE (NO ZOOM, NO GLOW) */
+.btn--primary {
+  background: linear-gradient(135deg, #0197b2, #0ce28d);
+  color: #ffffff !important;
+  border: none;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: 'Inter', sans-serif;
+  min-height: 56px;
+}
+
+.btn--primary:hover {
+  background-position: 100% 50%;
+  animation-duration: 6s;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* NO GLOW */
+}
+
+/* ✅ OUTLINE BUTTON - SAME SIMPLE STYLE */
+.btn--outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  color: #ffffff !important;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  min-height: 56px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn--outline:hover {
+  background: rgba(1,151,178,0.1);
+  border-color: #ffffff;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; /* NO GLOW */
+}
+
+/* ✅ REMOVE ALL EXTRA EFFECTS */
+.btn--primary::after,
+.btn--outline::after {
+  display: none !important;
+}
+
+/* RESPONSIVE BUTTON SIZING */
+@media (max-width: 1199px) {
+  .btn--primary, .btn--outline {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn--primary, .btn--outline {
+    
+    padding: 13px 28px;
+    font-size: 0.95rem;
+    min-height: 52px;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .btn--primary, .btn--outline {
+    padding: 13px 28px;
+    font-size: 0.875rem;
+    min-height: 48px;
+    
+    
+  }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animations */
+.hero-content h1 { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  animation: fadeUp 1.2s ease 0.2s forwards; 
+}
+.hero-content p { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  animation: fadeUp 1.2s ease 0.5s forwards; 
+}
+.hero-btns { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  animation: fadeUp 1.2s ease 0.8s forwards; 
+}
+
+@keyframes fadeUp {
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

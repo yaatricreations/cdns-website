@@ -1,0 +1,338 @@
+/* TestimonialSection.css - PERFECT gradient border + vertical stack + mobile dots */
+.testimonial-section {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(135deg, #f8fcff 0%, #f0f9f5 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 60px auto;
+  border-radius: 20px;
+}
+
+.testimonial-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, #0197b2, #0ce28d, #0197b2);
+  background-size: 300% 300%;
+  animation: borderFlow 8s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  margin: 0 clamp(1rem, 2vw, 1.5rem);
+}
+
+/* DESKTOP: Horizontal header */
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: clamp(2rem, 5vw, 3.125rem);
+  max-width: 1200px;
+  margin: 0 auto clamp(2rem, 4vh, 2.5rem) auto;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #0197b2;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(1,151,178,0.3);
+}
+
+.google-review-btn {
+  background: linear-gradient(135deg, rgba(1,151,178,1), rgba(12,226,141,1));
+  color: #ffffff;
+  border: none;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.google-review-btn:hover {
+  background: linear-gradient(135deg, rgba(12,226,141,0.85), rgba(1,151,178,0.85));
+  animation-duration: 6s;
+}
+
+.testimonial-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  position: relative;
+  z-index: 2;
+}
+
+.arrow {
+  width: clamp(3rem, 6vw, 3.5rem);
+  height: clamp(3rem, 6vw, 3.5rem);
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, rgba(1,151,178,0.9), rgba(12,226,141,0.9));
+  color: #ffffff;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  flex-shrink: 0;
+}
+
+.arrow:hover {
+  background: linear-gradient(135deg, rgba(12,226,141,1), rgba(1,151,178,1));
+}
+
+/* ✅ MOBILE-VISIBLE DOTS - ALWAYS CENTERED */
+.slider-dots {
+  display: flex !important;
+  gap: 0.75rem;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.dot {
+  width: clamp(0.75rem, 2vw, 0.875rem) !important;
+  height: clamp(0.75rem, 2vw, 0.875rem) !important;
+  border-radius: 50%;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(1,151,178,0.7), rgba(12,226,141,0.7)) !important;
+  background-size: 200% 200% !important;
+  animation: gradientFlow 8s ease infinite !important;
+  flex-shrink: 0;
+}
+
+.dot.active {
+  background: linear-gradient(135deg, rgba(12,226,141,1), rgba(1,151,178,1)) !important;
+}
+
+/* ✅ PERFECT GRADIENT BORDER LIKE BUTTON */
+.testimonial-card {
+  background: #ffffff;
+  color: #333;
+  padding: clamp(1.25rem, 2.5vw, 1.5rem) clamp(1.5rem, 3vw, 1.75rem);
+  width: clamp(20rem, 35vw, 24rem);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ✅ FIXED GRADIENT BORDER - SAME AS BUTTON */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, rgba(1,151,178,1), rgba(12,226,141,1), rgba(1,151,178,1));
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  border-radius: 23px;
+  z-index: -1;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.testimonial-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.125rem, 2.2vw, 1.25rem);
+  font-weight: 700;
+  margin: clamp(0.5rem, 1.2vh, 0.625rem) 0 clamp(0.625rem, 1.2vh, 0.875rem) 0;
+  color: #0197b2;
+}
+
+.testimonial-card small {
+  font-size: clamp(0.8125rem, 1.6vw, 0.875rem);
+  color: #0197b2;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+.review-img {
+  width: clamp(4.5rem, 9vw, 5rem);
+  height: clamp(4.5rem, 9vw, 5rem);
+  border-radius: 14px;
+  margin: 0 auto clamp(0.625rem, 1.8vh, 0.875rem) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(1,151,178,0.05);
+}
+
+.testimonial-card p {
+  font-size: clamp(0.875rem, 1.8vw, 0.9375rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============ RESPONSIVE: BUTTON AT BOTTOM - ABSOLUTE FINAL FIX ============ */
+@media (max-width: 1199px) and (min-width: 769px) {
+  .testimonial-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    position: relative !important;
+  }
+  
+  /* ✅ FORCE ORDER WITH HIGHEST SPECIFICITY */
+  .testimonial-header {
+    order: 1 !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 !important;
+  }
+  
+  .testimonial-carousel {
+    order: 2 !important;
+    width: 100% !important;
+    align-items: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  .slider-dots {
+    order: 3 !important;
+    width: 100%;
+    margin: 1.5rem 0 !important;
+  }
+  
+  /* ✅ BUTTON DEAD LAST - HIGHEST PRIORITY */
+  .google-review-btn {
+    order: 999 !important; /* EXTREMELY HIGH ORDER */
+    width: 100%;
+    max-width: 320px;
+    align-self: center !important;
+    margin-top: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: clamp(2.5rem, 6vh, 3.5rem) clamp(1rem, 4vw, 1.5rem) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.75rem !important;
+    position: relative !important;
+  }
+  
+  .testimonial-header {
+    order: 1 !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .testimonial-header h2 {
+    font-size: clamp(1.875rem, 9vw, 2.25rem);
+  }
+  
+  .testimonial-carousel {
+    order: 2 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  .arrow {
+    order: 2.1 !important;
+    width: clamp(2.5rem, 8vw, 3rem);
+    height: clamp(2.5rem, 8vw, 3rem);
+  }
+  
+  .testimonial-card {
+    order: 2.2 !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    padding: 1.5rem 1.75rem;
+    margin: 0 !important;
+  }
+  
+  .slider-dots {
+    order: 3 !important;
+    gap: 0.625rem;
+    width: 100%;
+    margin: 1.5rem 0 !important;
+  }
+  
+  /* ✅ BUTTON AT ABSOLUTE BOTTOM - IMPOSSIBLE TO OVERRIDE */
+  .google-review-btn {
+    order: 9999 !important; /* NUCLEAR OPTION */
+    width: 100% !important;
+    max-width: 300px !important;
+    align-self: center !important;
+    margin: 2rem 0 0 0 !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+  
+  .dot {
+    width: clamp(0.625rem, 2vw, 0.75rem) !important;
+    height: clamp(0.625rem, 2vw, 0.75rem) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .testimonial-section {
+    gap: 1.5rem !important;
+  }
+  
+  .testimonial-card {
+    width: 94vw !important;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .google-review-btn {
+    order: 9999 !important; /* SAME NUCLEAR ORDER */
+    padding: 1rem 1.5rem !important;
+  }
+}
