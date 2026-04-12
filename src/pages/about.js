@@ -34,7 +34,7 @@ function About() {
     },
     {
       title: "24/7 Availability",
-      content: "Reliable support for SIL, STA, ILO, and crisis response with person-centered care plans tailored to individual needs.",
+      content: "Reliable support and crisis response with person-centered care plans tailored to individual needs.",
       image: image7
     }
   ];
@@ -136,7 +136,7 @@ function About() {
               </div>
               <div className="service-item">
                 <div className="service-icon">🏠</div>
-                <h4>Assistance with Daily Tasks/Shared Living (SIL, ILO, STA)</h4>
+                <h4>Assistance with Daily Tasks/Shared Living</h4>
                 <p>Comprehensive support for Supported Independent Living, Independent Living Options, and Short Term Accommodation.</p>
               </div>
               <div className="service-item">
@@ -169,27 +169,7 @@ function About() {
             </div>
           </div>
 
-          {/* Community & Therapeutic Supports */}
-          <div className="service-category">
-            <h3>Community & Therapeutic Supports</h3>
-            <div className="service-grid">
-              <div className="service-item">
-                <div className="service-icon">💼</div>
-                <h4>Employment assistance and community participation</h4>
-                <p>Support accessing employment opportunities and meaningful community engagement activities.</p>
-              </div>
-              <div className="service-item">
-                <div className="service-icon">🩺</div>
-                <h4>Therapeutic supports (OT, Psychology, Physiotherapy coordination)</h4>
-                <p>Coordination with Occupational Therapists, Psychologists, and Physiotherapists for holistic therapy programs.</p>
-              </div>
-              <div className="service-item">
-                <div className="service-icon">👶</div>
-                <h4>Early childhood intervention and life stage transitions</h4>
-                <p>Specialized support for young children with disabilities and assistance navigating major life transitions.</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
 

@@ -121,7 +121,7 @@ function Footer() {
 
       {/* COPYRIGHT */}
       <div className="footer-bottom">
-        Copyright © 2026 Care-Au | Website
+        Copyright © 2026 CDNS | Website
         <br />
         Supported by <span>@ Yaatri Creations</span> 2026
       </div>
